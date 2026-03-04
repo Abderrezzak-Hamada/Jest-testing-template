@@ -12,9 +12,9 @@ describe('Product Utils', () => {
 
   // VOORBEELD - Deze test is al ingevuld
   test('VOORBEELD: sortByPrice sorteert op prijs laag naar hoog', () => {
-    const resultaat = sortByPrice(products);
-    expect(resultaat[0].name).toBe('Muis');
-    expect(resultaat[3].name).toBe('Laptop');
+    const result = sortByPrice(products);
+    expect(result[0].name).toBe('Muis');
+    expect(result[3].name).toBe('Laptop');
   });
 
   test('filterByCategory geeft alleen electronics terug', () => {

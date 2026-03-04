@@ -4,9 +4,9 @@ describe('Password Validator', () => {
   
   // VOORBEELD - Deze test is al ingevuld
   test('VOORBEELD: geldig wachtwoord geeft isValid true', () => {
-    const resultaat = validatePassword('Welkom123');
-    expect(resultaat.isValid).toBe(true);
-    expect(resultaat.errors).toEqual([]);
+    const result = validatePassword('Welkom123');
+    expect(result.isValid).toBe(true);
+    expect(result.errors).toEqual([]);
   });
 
   test('te kort wachtwoord geeft error', () => {
