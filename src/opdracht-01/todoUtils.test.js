@@ -1,26 +1,35 @@
 import { isValidTodo, getTodoPriority } from './todoUtils';
 
 describe('Todo Utils', () => {
-  
-  // VOORBEELD - Deze test is al ingevuld om te laten zien hoe het werkt
-  test('VOORBEELD: isValidTodo geeft true voor normale tekst', () => {
-    const result = isValidTodo('Boodschappen doen');
-    expect(result).toBe(true);
+
+  test('isValidTodo geeft true voor normale tekst', () => {
+    expect(isValidTodo('Boodschappen doen')).toBe(true);
   });
 
   test('isValidTodo geeft false voor lege string', () => {
-    // TODO: Test of '' invalid is
-    expect(true).toBe(false); // Deze test faalt! Vervang deze regel met je eigen test
+    expect(isValidTodo('')).toBe(false);
+  });
+
+  test('isValidTodo geeft false voor string met alleen spaties', () => {
+    expect(isValidTodo('   ')).toBe(false);
+  });
+
+  test('isValidTodo geeft false voor niet-string input', () => {
+    expect(isValidTodo(123)).toBe(false);
+    expect(isValidTodo(null)).toBe(false);
+    expect(isValidTodo(undefined)).toBe(false);
   });
 
   test('getTodoPriority geeft high voor urgent', () => {
-    // TODO: Test of 'urgent bellen' priority 'high' krijgt
-    expect(true).toBe(false); // Deze test faalt! Vervang deze regel met je eigen test
+    expect(getTodoPriority('urgent bellen')).toBe('high');
+  });
+
+  test('getTodoPriority geeft medium voor snel', () => {
+    expect(getTodoPriority('snel boodschappen doen')).toBe('medium');
   });
 
   test('getTodoPriority geeft low voor normale todo', () => {
-    // TODO: Test of 'koffie drinken' priority 'low' krijgt
-    expect(true).toBe(false); // Deze test faalt! Vervang deze regel met je eigen test
+    expect(getTodoPriority('koffie drinken')).toBe('low');
   });
 
 });
